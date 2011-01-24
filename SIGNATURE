@@ -1,0 +1,44 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.66.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 c33b22fa655e2dcaef8c6dcd6cb0d26462064331 Changes
+SHA1 9791fba32e1793172d983b08c1e0244ba69ccc75 INSTALL
+SHA1 c715d20265d2931c7564fc64abfdc4f8ff33e297 LICENSE
+SHA1 e73a065830a746301ab8858fe2a794ef098c5a20 MANIFEST
+SHA1 2d24de3d1f47974942bad731bc1de73ca6a35e17 META.json
+SHA1 3f4354cac478c5c10ef489c2bb0d469c8b8e22c5 META.yml
+SHA1 0d4b7155dc3629e89ddc4a43f8ea66fcd47451c2 Makefile.PL
+SHA1 54d65a4f62aa4d3481e2b01cef382896f103fac0 README
+SHA1 8d60a74efbf488af9624bc03314712ec4004a6bf dist.ini
+SHA1 f9675d8e9acf210a348ab9446e5244747fcbcf6c lib/CatalystX/Routes.pm
+SHA1 df40e03c6e9454ab48f16233932e2b02d25c2120 lib/CatalystX/Routes/Role/Class.pm
+SHA1 45e622eb5d0997cc77b8ce32aeaecb8a5a75fdd5 lib/CatalystX/Routes/Role/Controller.pm
+SHA1 f23c6fb9ad189fa33e754cd1f77dd75b9b939a04 t/lib/MyApp1.pm
+SHA1 d75e3015b983dcd7c3b0680b0a114a2d22ded2ae t/lib/MyApp1/Controller/C1.pm
+SHA1 ac35e596405a76d186e625574efa782c8079ee4a t/lib/MyApp1/Controller/Root.pm
+SHA1 a032c41ef6887fab1b900669c2d304fab46680e2 t/release-eol.t
+SHA1 455d1dd1867212a665ad5ea4126b572411de300c t/release-no-tabs.t
+SHA1 9433c240fe590bc404ab68ff63984df763e347ed t/release-pod-coverage.t
+SHA1 c1ff9d24eae753ca82767cf529fcc2e9a170cfa9 t/release-pod-spell.t
+SHA1 b30cbdfaf935017c4568c0c91b242438cb87786e t/release-pod-syntax.t
+SHA1 e4706c129c4bb88e0e525212ac7fb0da4900e448 t/routes.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.10 (GNU/Linux)
+
+iEYEARECAAYFAk0991kACgkQIgMCsV8qvRJX8gCcDpmcY8iws4C3GfDiELruEz3k
+shEAoIG0dWUqZhupNX+bCUSb0OimNP5a
+=FkKe
+-----END PGP SIGNATURE-----
