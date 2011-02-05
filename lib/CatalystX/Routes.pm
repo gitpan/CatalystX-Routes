@@ -1,13 +1,11 @@
 package CatalystX::Routes;
 BEGIN {
-  $CatalystX::Routes::VERSION = '0.01';
+  $CatalystX::Routes::VERSION = '0.02';
 }
 
 use strict;
 use warnings;
 
-use CatalystX::Routes::Role::Class;
-use CatalystX::Routes::Role::Controller;
 use Moose::Util qw( apply_all_roles );
 use Params::Util qw( _CODELIKE _REGEX _STRING );
 use Scalar::Util qw( blessed );
@@ -15,11 +13,8 @@ use Scalar::Util qw( blessed );
 use Moose::Exporter;
 
 Moose::Exporter->setup_import_methods(
-    with_meta       => [qw( get get_html post put del chain_point )],
-    as_is           => [qw( chained args capture_args path_part action_class_name )],
-    class_metaroles => {
-        class => ['CatalystX::Routes::Role::Class'],
-    },
+    with_meta => [qw( get get_html post put del chain_point )],
+    as_is => [qw( chained args capture_args path_part action_class_name )],
 );
 
 sub get {
@@ -85,7 +80,9 @@ sub _add_chain_point {
     my $name = $_[0];
     $name =~ s{/}{|}g;
 
-    $meta->add_chain_point( $name => [ $attrs, $sub ] );
+    $meta->add_method( $name => $sub );
+
+    $meta->name()->config()->{actions}{$name} = $attrs;
 }
 
 sub _process_args {
@@ -132,19 +129,9 @@ sub _maybe_add_rest_route {
 
     return if $meta->has_method($name);
 
-    # This could be done by Moose::Exporter, but that would require that the
-    # module has already inherited from Cat::Controller when it calls "use
-    # CatalystX::Routes".
-    unless ( $meta->does_role('CatalystX::Routes::Role::Controller') ) {
-        apply_all_roles(
-            $meta->name(),
-            'CatalystX::Routes::Role::Controller'
-        );
-    }
-
     $meta->add_method( $name => sub { } );
 
-    $meta->add_route( $name => [ $attrs, $meta->get_method($name) ] );
+    $meta->name()->config()->{actions}{$name} = $attrs;
 
     return;
 }
@@ -185,7 +172,7 @@ sub _STRINGLIKE0 ($) {
     # Catalyst::Controller->action_namespace
     package FakeConfig;
 BEGIN {
-  $FakeConfig::VERSION = '0.01';
+  $FakeConfig::VERSION = '0.02';
 }
 
     sub config {
@@ -195,7 +182,7 @@ BEGIN {
 
 1;
 
-# ABSTRACT: Sugar for declaring RESTful chained action in Catalyst
+# ABSTRACT: Sugar for declaring RESTful chained actions in Catalyst
 
 
 
@@ -203,11 +190,11 @@ BEGIN {
 
 =head1 NAME
 
-CatalystX::Routes - Sugar for declaring RESTful chained action in Catalyst
+CatalystX::Routes - Sugar for declaring RESTful chained actions in Catalyst
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -382,7 +369,7 @@ This software is Copyright (c) 2011 by Dave Rolsky.
 
 This is free software, licensed under:
 
-  The Artistic License 2.0 (GPL Compatible)
+  The Artistic License 2.0
 
 =cut
 

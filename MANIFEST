@@ -9,8 +9,6 @@ README
 SIGNATURE
 dist.ini
 lib/CatalystX/Routes.pm
-lib/CatalystX/Routes/Role/Class.pm
-lib/CatalystX/Routes/Role/Controller.pm
 t/lib/MyApp1.pm
 t/lib/MyApp1/Controller/C1.pm
 t/lib/MyApp1/Controller/Root.pm

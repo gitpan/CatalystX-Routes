@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Sugar for declaring RESTful chained action in Catalyst',
+  'ABSTRACT' => 'Sugar for declaring RESTful chained actions in Catalyst',
   'AUTHOR' => 'Dave Rolsky <autarch@urth.org>',
   'BUILD_REQUIRES' => {
     'Test::More' => '0.88'
@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     'Params::Util' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.01',
+  'VERSION' => '0.02',
   'test' => {
     'TESTS' => 't/*.t'
   }

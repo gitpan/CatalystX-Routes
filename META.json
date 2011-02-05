@@ -1,10 +1,10 @@
 {
-   "abstract" : "Sugar for declaring RESTful chained action in Catalyst",
+   "abstract" : "Sugar for declaring RESTful chained actions in Catalyst",
    "author" : [
       "Dave Rolsky <autarch@urth.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200000, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.200002, CPAN::Meta::Converter version 2.101670",
    "license" : [
       "artistic_2"
    ],
@@ -46,6 +46,6 @@
          "web" : "http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=catagits/CatalystX-Routes.git;a=summary"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }
 
